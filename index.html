@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bitcoin</title>
+  <!-- meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<!--GOOGLE FONT -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- import css -->
+  <link rel="stylesheet" href="index.css">
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 99999;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" onclick="home_page()">COIN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" style="cursor: pointer;" onclick="history_and_profit_loss_page('history')">Yapılan Tüm İşlemler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" style="cursor: pointer;" onclick="history_and_profit_loss_page('profit_and_loss')">Kâr Zarar</a>
+          </li>
+        </ul>
+        <div class="price input-group-text" style="background-color: rgb(20, 17, 24);"><span class="input-group-text">$</span><p class="ms-5 mt-3 white-text" id="wallet-price">1000000</p><p class="ms-5"></p></div>
+      </div>
+    </div>
+  </nav>
+  
+<!-- navbar-end -->
+
+
+
+
+<div id="home">
+      <img src="img/slider.jpg"
+        class="d-block w-100 scroll-img bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+        height="450" alt="...">
+        <button type="button" class="btn btn-success position-absolute translate-middle start-50 transparent dark-color" style="width: 30%;" onclick="modal(0)">Satın Al</button>
+    
+        <div class="col-12 row center-2">
+ 
+          <!-- card-1 -->
+          <div class="card col-3 border border-2 rounded" style="width: 18rem;">
+            <button class="btn btn-outline-green ms-5 position-absolute start-50 sell-button" type="button" style="background-color: green;"
+            onclick="modal(1)">
+            <i class="material-icons d-flex justify-content-center" style="color: aliceblue;">sell</i>
+          </button>
+            <img src="img/BTC.png" class="card-img-top center" alt="..." id="card-1-img">
+            <div class="card-body">
+              <h2 class="card-title text-center" style="color: rgb(255, 0, 0);" id="card-1-name">Bitcoin</h2>
+              <p class="card-text text-center" id="card-1-price">19081.861816344957 <span>$</span></p>
+              <br>
+              <h5 class="card-text text-center fw-bold" style="color: rgb(246, 109, 109);">Sahip Olduğunuz</h5>
+              <p class="card-text text-center fw-bold" id="card-1-piece">0</p>
+            </div>
+          </div>
+          <!-- card-1-end -->
+          <!-- card-2 -->
+          <div class="card col-3 border border-2 rounded" style="width: 18rem;">
+            <button class="btn btn-outline-green ms-5 position-absolute start-50 sell-button" type="button" style="background-color: green;"
+            onclick="modal(2)">
+            <i class="material-icons d-flex justify-content-center" style="color: aliceblue;">sell</i>
+          </button>
+            <img src="img/BTC.png" class="card-img-top center" alt="..." id="card-2-img">
+            <div class="card-body">
+              <h2 class="card-title text-center" style="color: rgb(255, 0, 0);" id="card-2-name">Bitcoin</h2>
+              <p class="card-text text-center" id="card-2-price">19081.861816344957 <span>$</span></p>
+              <br>
+              <h5 class="card-text text-center fw-bold" style="color: rgb(246, 109, 109);">Sahip Olduğunuz</h5>
+              <p class="card-text text-center fw-bold" id="card-2-piece">0</p>
+            </div>
+          </div>
+          <!-- card-2-end -->
+      
+          <!-- card-3 -->
+          <div class="card col-3 border border-2 rounded" style="width: 18rem;">
+            <button class="btn btn-outline-green ms-5 position-absolute start-50 sell-button" type="button" style="background-color: green;"
+            onclick="modal(3)">
+            <i class="material-icons d-flex justify-content-center" style="color: aliceblue;">sell</i>
+          </button>
+            <img src="img/BTC.png" class="card-img-top center" alt="..." id="card-3-img">
+            <div class="card-body">
+              <h2 class="card-title text-center" style="color: rgb(255, 0, 0);" id="card-3-name">Bitcoin</h2>
+              <p class="card-text text-center" id="card-3-price">19081.861816344957 <span>$</span></p>
+              <br>
+              <h5 class="card-text text-center fw-bold" style="color: rgb(246, 109, 109);">Sahip Olduğunuz</h5>
+              <p class="card-text text-center fw-bold" id="card-3-piece">0</p>
+            </div>
+          </div>
+          <!-- card-3-end -->
+      
+      <!-- card-4 -->
+      <div class="card col-3 border border-2 rounded" style="width: 18rem;">
+        <button class="btn btn-outline-green ms-5 position-absolute start-50 sell-button" type="button" style="background-color: green;"
+        onclick="modal(4)">
+        <i class="material-icons d-flex justify-content-center" style="color: aliceblue;">sell</i>
+      </button>
+        <img src="img/BTC.png" class="card-img-top center" alt="..." id="card-4-img">
+        <div class="card-body">
+          <h2 class="card-title text-center" style="color: rgb(255, 0, 0);" id="card-4-name">Bitcoin</h2>
+          <p class="card-text text-center" id="card-4-price">19081.861816344957 <span>$</span></p>
+          <br>
+          <h5 class="card-text text-center fw-bold" style="color: rgb(246, 109, 109);">Sahip Olduğunuz</h5>
+          <p class="card-text text-center fw-bold" id="card-4-piece">0</p>
+        </div>
+      </div>
+      <!-- card-4-end -->
+      
+      <!-- card-5 -->
+      <div class="card col-3 border border-2 rounded" style="width: 18rem;">
+        <button class="btn btn-outline-green ms-5 position-absolute start-50 sell-button" type="button" style="background-color: green;"
+            onclick="modal(5)">
+            <i class="material-icons d-flex justify-content-center" style="color: aliceblue;">sell</i>
+          </button>
+        <img src="img/BTC.png" class="card-img-top center" alt="..." id="card-5-img">
+        <div class="card-body">
+          <h2 class="card-title text-center" style="color: rgb(255, 0, 0);" id="card-5-name">Bitcoin</h2>
+          <p class="card-text text-center" id="card-5-price">19081.861816344957 <span>$</span></p>
+          <br>
+          <h5 class="card-text text-center fw-bold" style="color: rgb(246, 109, 109);">Sahip Olduğunuz</h5>
+          <p class="card-text text-center fw-bold" id="card-5-piece">0</p>
+        </div>
+      </div>
+      <!-- card-5-end -->
+      
+      <!-- card-6 -->
+      <div class="card col-3 border border-2 rounded" style="width: 18rem;">
+        <button class="btn btn-outline-green ms-5 position-absolute start-50 sell-button" type="button" style="background-color: green;"
+            onclick="modal(6)">
+            <i class="material-icons d-flex justify-content-center" style="color: aliceblue;">sell</i>
+          </button>
+        <img src="img/BTC.png" class="card-img-top center" alt="..." id="card-6-img">
+        <div class="card-body">
+          <h2 class="card-title text-center" style="color: rgb(255, 0, 0);" id="card-6-name">Bitcoin</h2>
+          <p class="card-text text-center" id="card-6-price">19081.861816344957 <span>$</span></p>
+          <br>
+          <h5 class="card-text text-center fw-bold" style="color: rgb(246, 109, 109);">Sahip Olduğunuz</h5>
+          <p class="card-text text-center fw-bold" id="card-6-piece">0</p>
+        </div>
+      </div>
+      <!-- card-6-end -->
+      
+        </div>
+      </div>
+  </div>
+
+  <!-- Table -->
+<div id="tables" class="d-none">
+  <table class="table table-dark table-striped table-borderless">
+    <thead>
+        <tr>
+            <th id="th-0">#</th>
+            <th id="th-1">Coin Adı</th>
+            <th id="th-2">Coin Alınan Fiyat</th>
+            <th id="th-3">Coin Satış Fiyat</th>
+            <th id="th-4">Adet</th>
+            <th id="th-5">Kar-Zarar</th>
+        </tr>
+    </thead>
+    <tbody id="mytable"></tbody>
+</table>
+<!-- Table End -->
+</div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" style="z-index: 999999;" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Coin Alım</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <br>
+                    <div class="modal-body">
+                        <div class="buy">
+                            <div class="select">
+                              <label for="select-option">Kripto Para</label>
+                              <div class="input-group mb-3">
+                                <select class="form-select" id="select-option">
+                                  <option value="-1">Coin Seçin</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="valueInput">
+                              <div class="input-group mb-3 mt-4">
+                                <span class="input-group-text">$</span>
+                                <input id="coin-sell-price" type="number" class="form-control" readonly>
+                                </div>
+                              <div class="input-group mb-3 mt-4">
+                                    <span class="input-group-text">Adet</span>
+                                    <input id="coin-piece" type="number" class="form-control" onchange="change_textbox('piece')">
+                                    <span class="input-group-text">Fiyat</span>
+                                    <input type="number" id="coin-buy-price" class="form-control" onchange="change_textbox('price')">
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="buy_sell()" id="buy-coin">Satın Al</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- Modal End -->
+
+      <script src="index.js" defer></script>
+</body>
+
+</html>

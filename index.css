@@ -1,0 +1,27 @@
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+  .price{
+    display: inline-flex; height: 50px; background-color: rgb(167, 234, 167);
+  }
+.dark-color{
+    color: black !important;
+}
+.center-2{
+  margin: auto;
+  padding: 80px;
+}
+.white-text{
+  color: white;
+}
+.transparent{
+  margin: 30px;
+  background-color: #aefee0;
+  border: 1px solid black;
+  opacity: 0.6;
+}
+.sell-button{
+  margin-left: 92px!important;
+}
